@@ -27,16 +27,20 @@ class Main {
 		        		for (token=lexer.nextToken(); token.getType()!=Token.EOF; token=lexer.nextToken())
 		        		{
 		        			String type = "";
+							String charLiteral = "";
 		        			String text = token.getText();
-
+						//System.out.println("\nTESTESTESTESTES TEXT = " + text + "\n");
 		        			switch (token.getType())
 		        			{
 		        			    case DecafLexer.ID:
                                     type = " IDENTIFIER";
                                     break;
+								case DecafLexer.CHAR:
+									charLiteral = " CHARLITERAL ";
+									break;
 
 		        			}
-		        			System.out.println (token.getLine() + type + " " + text);
+		        			System.out.println (token.getLine() + type + charLiteral + text);
 		        		}
 		        		done = true;
         			} catch(Exception e) {
