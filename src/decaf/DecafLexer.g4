@@ -21,9 +21,12 @@ WS_ : (' ' | '\n' ) -> skip;
 
 SL_COMMENT : '//' (~'\n')* '\n' -> skip;
 
-CHAR : '\'' (ESC|~'\'') '\'';
+CHARLITERAL : '\'' (ESC|CHAR) '\'';
 
-STRING : '"' (ESC|~'"')* '"';
+STRING : '"' (ESC|CHAR)* '"';
+
+fragment 
+ CHAR : ('a'..'z' | 'A'..'Z' | '0'..'9' | ' ' | '!' | '#' | '$' | '%' | '&') ;
 
 fragment
  ESC : '\\' [nt\\"] ;

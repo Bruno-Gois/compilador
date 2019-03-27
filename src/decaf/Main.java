@@ -35,7 +35,7 @@ class Main {
 		        			    case DecafLexer.ID:
                                     type = " IDENTIFIER";
                                     break;
-								case DecafLexer.CHAR:
+								case DecafLexer.CHARLITERAL:
 									charLiteral = " CHARLITERAL ";
 									break;
 
