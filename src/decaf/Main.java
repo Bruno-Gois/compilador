@@ -30,6 +30,7 @@ class Main {
 							String charLiteral = "";
 							String hexlit = "";
 		        			String text = token.getText();
+							String str = "";
 						//System.out.println("\nTESTESTESTESTES TEXT = " + text + "\n");
 		        			switch (token.getType())
 		        			{
@@ -42,9 +43,12 @@ class Main {
 								case  DecafLexer.HEXLIT:
 									hexlit = " INTLITERAL ";
 									break;
+								case DecafLexer.STRING:
+									str = " STRINGLITERAL ";
+									break;
 		        			}
 							
-							String typeToken = type + charLiteral + hexlit;
+							String typeToken = type + charLiteral + hexlit + str;
 		        			System.out.println (token.getLine() + typeToken + text);
 		        		}
 		        		done = true;
