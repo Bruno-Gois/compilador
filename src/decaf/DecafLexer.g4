@@ -25,6 +25,8 @@ CHARLITERAL : '\'' (ESC|CHAR) '\'';
 
 STRING : '"' (ESC|CHAR)* '"';
 
+HEXLIT : '0x' ('a'..'f' | 'A'..'F' | '0'..'9')+;
+
 fragment 
  CHAR : ('a'..'z' | 'A'..'Z' | '0'..'9' | ' ' | '!' | '#' | '$' | '%' | '&') ;
 
