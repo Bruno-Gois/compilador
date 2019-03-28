@@ -28,9 +28,9 @@ class Main {
 		        		{
 		        			String type = "";
 							String charLiteral = "";
-							String hexlit = "";
+							String intliteral = "";
 		        			String text = token.getText();
-							String str = "";
+							String strliteral = "";
 
 		        			switch (token.getType())
 		        			{
@@ -40,15 +40,15 @@ class Main {
 								case DecafLexer.CHARLITERAL:
 									charLiteral = " CHARLITERAL ";
 									break;
-								case  DecafLexer.HEXLIT:
-									hexlit = " INTLITERAL ";
+								case (DecafLexer.HEXLIT | DecafLexer.NUMBER):
+									intliteral = " INTLITERAL ";
 									break;
 								case DecafLexer.STRING:
-									str = " STRINGLITERAL ";
+									strliteral = " STRINGLITERAL ";
 									break;
 		        			}
 							
-							String typeToken = type + charLiteral + hexlit + str;
+							String typeToken = type + charLiteral + intliteral + strliteral;
 		        			System.out.println (token.getLine() + typeToken + text);
 		        		}
 		        		done = true;

@@ -24,6 +24,10 @@ STRING : '"' (ESC|CHAR)* '"';
 
 HEXLIT : '0x' ('a'..'f' | 'A'..'F' | '0'..'9')+;
 
+NUMBER : ('0'..'9')+ (~'x');
+
+MINUS : '-';
+
 ID  : ('a'..'z' | 'A'..'Z')+;
 
 fragment 
