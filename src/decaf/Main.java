@@ -43,6 +43,9 @@ class Main {
 								case DecafLexer.MINUS:
 									type = " ";
 									break;
+								case DecafLexer.RESERVED_WORD:
+									type= " ";
+									break;
 								case DecafLexer.NUMBER:
 									type = " INTLITERAL ";
 									break;

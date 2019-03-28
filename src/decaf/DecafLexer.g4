@@ -20,7 +20,9 @@ SL_COMMENT : '//' (~'\n')* '\n' -> skip;
 
 CHARLITERAL : '\'' (ESC|CHAR) '\'';
 
-STRING : '"' (ESC|CHAR)* '"';
+RESERVED_WORD : 'if';
+
+STRING : '"' (ESC|CHAR)+ '"';
 
 NUMBER : ('0'..'9')+ ~'x';
 
