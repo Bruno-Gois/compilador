@@ -22,6 +22,10 @@ CHARLITERAL : '\'' (ESC|CHAR) '\'';
 
 STRING : '"' (ESC|CHAR)* '"';
 
+NUMBER : ('0'..'9')+ (~'x');
+
+MINUS : '-';
+
 HEXLIT : '0x' ('a'..'f' | 'A'..'F' | '0'..'9')+;
 
 ID  : ('a'..'z' | 'A'..'Z')+;

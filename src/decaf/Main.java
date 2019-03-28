@@ -37,7 +37,13 @@ class Main {
 								case DecafLexer.CHARLITERAL:
 									type = " CHARLITERAL ";
 									break;
-								case  DecafLexer.HEXLIT:
+								case DecafLexer.HEXLIT:
+									type = " INTLITERAL ";
+									break;
+								case DecafLexer.MINUS:
+									type = " ";
+									break;
+								case DecafLexer.NUMBER:
 									type = " INTLITERAL ";
 									break;
 								case DecafLexer.STRING:
