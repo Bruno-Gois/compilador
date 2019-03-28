@@ -31,11 +31,11 @@ class Main {
 							String hexlit = "";
 		        			String text = token.getText();
 							String str = "";
-						//System.out.println("\nTESTESTESTESTES TEXT = " + text + "\n");
+
 		        			switch (token.getType())
 		        			{
 		        			    case DecafLexer.ID:
-                                    type = " IDENTIFIER";
+                                    type = " IDENTIFIER ";
                                     break;
 								case DecafLexer.CHARLITERAL:
 									charLiteral = " CHARLITERAL ";
