@@ -40,11 +40,14 @@ class Main {
 								case DecafLexer.HEXLIT:
 									type = " INTLITERAL ";
 									break;
-								case DecafLexer.MINUS:
+								case DecafLexer.OPERATION:
 									type = " ";
 									break;
 								case DecafLexer.RESERVED_WORD:
-									type= " ";
+									type = " ";
+									break;
+								case DecafLexer.BOOLEAN:
+									type = " BOOLEANLITERAL ";
 									break;
 								case DecafLexer.NUMBER:
 									type = " INTLITERAL ";

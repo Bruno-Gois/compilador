@@ -20,18 +20,21 @@ SL_COMMENT : '//' (~'\n')* '\n' -> skip;
 
 CHARLITERAL : '\'' (ESC|CHAR) '\'';
 
-RESERVED_WORD : 'if';
+RESERVED_WORD : ('if' | 'boolean' | 'callout' | 'class' | 'else' |'int' |'return' | 'void' | 'for' | 'break' | 'continue');
+
+BOOLEAN : ('true' | 'false');
 
 STRING : '"' (ESC|CHAR)+ '"';
 
 NUMBER : ('0'..'9')+ ~'x';
 
-MINUS : '-';
-
 HEXLIT : '0x' ('a'..'f' | 'A'..'F' | '0'..'9')+;
 
-ID  : ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')+;
+ID  : ('a'..'z' | 'A'..'Z' | '_' | '1'..'9')+;
 //~(['0x'])
+//teste nao preve id comecando em 0
+
+OPERATION : ('+' | '-' | '*' | '<' | ('<' '=') | ('!' '=') | ('&' '&'));
 
 fragment 
  CHAR : ('a'..'z' | 'A'..'Z' | '0'..'9' | ' ' | '!' | '#' | '$' | '%' | '&' | '(' | ')' | '*' | '+' | ',' | '.' | ':' | '?' | '_');
