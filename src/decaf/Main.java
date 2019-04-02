@@ -46,6 +46,9 @@ class Main {
 								case DecafLexer.RESERVED_WORD:
 									type = " ";
 									break;
+								case DecafLexer.TOKENS:
+									type = " ";
+									break;
 								case DecafLexer.BOOLEAN:
 									type = " BOOLEANLITERAL ";
 									break;
