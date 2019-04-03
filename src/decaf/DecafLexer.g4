@@ -26,7 +26,7 @@ BOOLEAN : ('true' | 'false');
 
 STRING : '"' (ESC|CHAR)+ '"';
 
-NUMBER : ('0'..'9')+ WS_;
+NUMBER : ('0'..'9')+ ~('x');
 
 HEXLIT : '0x' ('a'..'f' | 'A'..'F' | '0'..'9')+;
 
