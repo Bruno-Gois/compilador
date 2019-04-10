@@ -14,6 +14,9 @@ TK_class : 'class Program';
 LCURLY : '{';
 RCURLY : '}';
 
+LBRACKET : '[';
+RBRACKET : ']';
+
 WS_ : (' ' | '\n' ) -> skip;
 
 SL_COMMENT : '//' (~'\n')* '\n' -> skip;
