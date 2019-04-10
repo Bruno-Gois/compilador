@@ -39,6 +39,7 @@ class Main {
 							String intliteral = "";
 		        			String text = token.getText();
 							String strliteral = "";
+		        			String text = token.getText();
 
 		        			switch (token.getType())
 		        			{
@@ -46,7 +47,7 @@ class Main {
                                     type = " IDENTIFIER ";
                                     break;
 								case DecafLexer.CHARLITERAL:
-									charLiteral = " CHARLITERAL ";
+									type = " CHARLITERAL ";
 									break;
 								case (DecafLexer.HEXLIT | DecafLexer.NUMBER):
 									intliteral = " INTLITERAL ";
@@ -58,6 +59,30 @@ class Main {
 							
 							String typeToken = type + charLiteral + intliteral + strliteral;
 		        			System.out.println (token.getLine() + typeToken + text);
+								case DecafLexer.HEXLIT:
+									type = " INTLITERAL ";
+									break;
+								case DecafLexer.OPERATION:
+									type = " ";
+									break;
+								case DecafLexer.RESERVED_WORD:
+									type = " ";
+									break;
+								case DecafLexer.TOKENS:
+									type = " ";
+									break;
+								case DecafLexer.BOOLEAN:
+									type = " BOOLEANLITERAL ";
+									break;
+								case DecafLexer.NUMBER:
+									type = " INTLITERAL ";
+									break;
+								case DecafLexer.STRING:
+									type = " STRINGLITERAL ";
+									break;
+		        			}
+							
+		        			System.out.println (token.getLine() + type + text);
 		        		}
 		        		done = true;
         			} catch(Exception e) {

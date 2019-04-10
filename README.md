@@ -1,6 +1,7 @@
 # compilador
 
-Análise léxica: 03/04/2019
+  
+  Análise léxica: 03/04/2019
 ◦ Entregar o modelo de análise léxica do compilador.
 
 • Análise sintática: 24/04/2019
