@@ -63,6 +63,8 @@ class Main {
                                 case DecafLexer.ID:
                                     type = " IDENTIFIER ";
                                     break;
+								case DecafLexer.CHARLITERAL:
+									type = " CHARLITERAL ";
 		        			}
 							
 		        		    System.out.println (token.getLine() + type + text);
