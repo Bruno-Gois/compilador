@@ -35,54 +35,37 @@ class Main {
 		        		for (token=lexer.nextToken(); token.getType()!=Token.EOF; token=lexer.nextToken())
 		        		{
 		        			String type = "";
-							String charLiteral = "";
-							String intliteral = "";
-		        			String text = token.getText();
-							String strliteral = "";
-		        			String text = token.getText();
-
+                            String text = token.getText();
+                            
 		        			switch (token.getType())
 		        			{
-		        			    case DecafLexer.ID:
+                                case DecafLexer.HEXLIT:
+                                    type = " INTLITERAL ";
+                                    break;
+                                case DecafLexer.OPERATION:
+                                    type = " ";
+                                    break;
+                                case DecafLexer.RESERVED_WORD:
+                                    type = " ";
+                                    break;
+                                case DecafLexer.TOKENS:
+                                    type = " ";
+                                    break;
+                                case DecafLexer.BOOLEAN:
+                                    type = " BOOLEANLITERAL ";
+                                    break;
+                                case DecafLexer.NUMBER:
+                                    type = " INTLITERAL ";
+                                    break;
+                                case DecafLexer.STRING:
+                                    type = " STRINGLITERAL ";
+                                    break;
+                                case DecafLexer.ID:
                                     type = " IDENTIFIER ";
                                     break;
-								case DecafLexer.CHARLITERAL:
-									type = " CHARLITERAL ";
-									break;
-								case (DecafLexer.HEXLIT | DecafLexer.NUMBER):
-									intliteral = " INTLITERAL ";
-									break;
-								case DecafLexer.STRING:
-									strliteral = " STRINGLITERAL ";
-									break;
 		        			}
 							
-							String typeToken = type + charLiteral + intliteral + strliteral;
-		        			System.out.println (token.getLine() + typeToken + text);
-								case DecafLexer.HEXLIT:
-									type = " INTLITERAL ";
-									break;
-								case DecafLexer.OPERATION:
-									type = " ";
-									break;
-								case DecafLexer.RESERVED_WORD:
-									type = " ";
-									break;
-								case DecafLexer.TOKENS:
-									type = " ";
-									break;
-								case DecafLexer.BOOLEAN:
-									type = " BOOLEANLITERAL ";
-									break;
-								case DecafLexer.NUMBER:
-									type = " INTLITERAL ";
-									break;
-								case DecafLexer.STRING:
-									type = " STRINGLITERAL ";
-									break;
-		        			}
-							
-		        			System.out.println (token.getLine() + type + text);
+		        		    System.out.println (token.getLine() + type + text);
 		        		}
 		        		done = true;
         			} catch(Exception e) {
@@ -90,8 +73,8 @@ class Main {
         	            System.out.println(CLI.infile+" "+e);
         	            lexer.skip();
         	        }
-        		}
-        	}
+                }
+            }
         	else if (CLI.target == CLI.PARSE || CLI.target == CLI.DEFAULT)
         	{
  				// Primeiro faz o parsing da cadeia
@@ -122,16 +105,15 @@ class Main {
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frame.setSize(200,200);
                     frame.setVisible(true);
-        	}
-        }
-       } catch(Exception e) {
+        	    }
+            }
+    } catch(Exception e) {
         	// print the error:
             System.out.println(CLI.infile+" "+e);
         }
-    }
 
-    public static void Error(Token token) {
-        System.out.println("Error: " + token.getText());
+        // public static void Error(Token token) {
+        //     System.out.println("Error: " + token.getText());
+        // }
     }
 }
-
