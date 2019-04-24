@@ -11,6 +11,8 @@
   <property name="lib"     location="lib"     />
   <!-- Binaries for tools, etc. -->
   <property name="bin"     location="bin"     />
+  <!-- Binaries for tools, etc. -->
+  <property name=".antlr"     location="src/decaf/.antlr"     />
   
   <!-- We rely on ANTLR 4.5.3  -->
   
@@ -42,6 +44,7 @@
 
   <target name="init">
     <delete dir="${java}/decaf"/>
+    <delete dir="${.antlr}"/>
     <mkdir dir="${classes}"/>
     <mkdir dir="${java}"/>
     <mkdir dir="${dist}"/>

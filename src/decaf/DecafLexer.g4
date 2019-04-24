@@ -28,7 +28,7 @@ SL_COMMENT : '//' (~'\n')* '\n' -> skip;
 
 CHARLITERAL : '\'' (ESC|CHAR) '\'';
 
-RESERVED_WORD : ('if' | 'boolean' | 'callout' | 'class' | 'else' |'int' |'return' | 'void' | 'for' | 'break' | 'continue');
+//RESERVED_WORD : ('if' | INT_BOOLEAN |  'callout' | 'class' | 'else'  |'return' | 'void' | 'for' | 'break' | 'continue');
 
 IF : 'if';
 
@@ -58,15 +58,23 @@ BOOLEAN : ('true' | 'false');
 
 STRING : '"' (ESC|CHAR)+ '"';
 
-NUMBER : ('0'..'9')+ ~('x');
+NUMBER : NUMERIC+;
 
-HEXLIT : '0x' ('a'..'f' | 'A'..'F' | '0'..'9')+;
+HEXLIT : '0x' ('a'..'f' | 'A'..'F' | NUMERIC)+;
 
 MINUS : '-';
 
 PLUS : '+';
 
 EXCLAMATION : '!';
+
+ARITH_OP : ('+' | '-' | '*' | '/');
+
+REL_OP : ('<' | '>' | '<=' | '>=');
+
+EQ_OP : ('==' | '!=');
+
+COND_OP : ('&&' | '||');
 
 ID  : ID_CHAR (ALPHANUMERIC)*;
 

@@ -12,13 +12,15 @@ options
 
 program: TK_class LCURLY field_decl* method_decl* RCURLY EOF;
 
-field_decl: (type ID | (type ID LBRACKET INT_LITERAL LBRACKET))+ SEMICOLON ; //+, da erro
+field: type ID | type ID LBRACKET INT_LITERAL RBRACKET;
+
+field_decl: field (COMMA field)* SEMICOLON;
 
 method_decl: (type | VOID) ID LPARENTHESIS parameters RPARENTHESIS block;
 
 type: INT_BOOLEAN;
 
-parameters: type ID (COMMA type ID)*;
+parameters: (type ID (COMMA type ID)*)*;
 
 block: LCURLY var_decl* statement* RCURLY;
 
@@ -46,7 +48,15 @@ expr: location
     | EXCLAMATION expr
     | LPARENTHESIS expr RPARENTHESIS;
 
-literal: INT_LITERAL |  CHARLITERAL | BOOL_LITERAL;
+literal: INT_LITERAL |  CHARLITERAL | BOOLEAN;
 
 method_call: ID LPARENTHESIS (expr (COMMA expr)* )? RPARENTHESIS
             | CALLOUT LPARENTHESIS string_literal (COMMA callout_arg)* RPARENTHESIS;
+
+bin_op: ARITH_OP | REL_OP | EQ_OP | COND_OP;
+
+string_literal: CHARLITERAL*;
+
+callout_arg: expr | string_literal;
+
+

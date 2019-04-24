@@ -16,7 +16,7 @@ import org.antlr.v4.runtime.tree.ParseTreeWalker;
 import java6035.tools.CLI.*;
 
 class Main {
-    public static void main(String[] args) {
+        public static void main(String[] args) {
         try {
         	CLI.parse (args, new String[0]);
 
@@ -39,13 +39,7 @@ class Main {
                             
 		        			switch (token.getType())
 		        			{
-                                case DecafLexer.HEXLIT:
-                                    type = " INTLITERAL ";
-                                    break;
                                 case DecafLexer.OPERATION:
-                                    type = " ";
-                                    break;
-                                case DecafLexer.RESERVED_WORD:
                                     type = " ";
                                     break;
                                 case DecafLexer.TOKENS:
@@ -54,7 +48,7 @@ class Main {
                                 case DecafLexer.BOOLEAN:
                                     type = " BOOLEANLITERAL ";
                                     break;
-                                case DecafLexer.NUMBER:
+                                case DecafLexer.INT_LITERAL:
                                     type = " INTLITERAL ";
                                     break;
                                 case DecafLexer.STRING:
