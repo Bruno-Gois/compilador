@@ -42,9 +42,6 @@ class Main {
                                 case DecafLexer.OPERATION:
                                     type = " ";
                                     break;
-                                case DecafLexer.TOKENS:
-                                    type = " ";
-                                    break;
                                 case DecafLexer.BOOLEAN:
                                     type = " BOOLEANLITERAL ";
                                     break;

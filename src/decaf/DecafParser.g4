@@ -57,7 +57,7 @@ bin_op: arith_op | REL_OP | EQ_OP | COND_OP;
 
 arith_op: (PLUS | MINUS | MULTIPLICATION | DIVISION);
 
-string_literal: CHARLITERAL*;
+string_literal: STRING;
 
 callout_arg: expr | string_literal;
 
