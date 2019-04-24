@@ -53,7 +53,9 @@ literal: INT_LITERAL |  CHARLITERAL | BOOLEAN;
 method_call: ID LPARENTHESIS (expr (COMMA expr)* )? RPARENTHESIS
             | CALLOUT LPARENTHESIS string_literal (COMMA callout_arg)* RPARENTHESIS;
 
-bin_op: ARITH_OP | REL_OP | EQ_OP | COND_OP;
+bin_op: arith_op | REL_OP | EQ_OP | COND_OP;
+
+arith_op: (PLUS | MINUS | MULTIPLICATION | DIVISION);
 
 string_literal: CHARLITERAL*;
 

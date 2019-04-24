@@ -66,9 +66,11 @@ MINUS : '-';
 
 PLUS : '+';
 
-EXCLAMATION : '!';
+MULTIPLICATION : '*';
 
-ARITH_OP : ('+' | '-' | '*' | '/');
+DIVISION : '/';
+
+EXCLAMATION : '!';
 
 REL_OP : ('<' | '>' | '<=' | '>=');
 
