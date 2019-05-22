@@ -22,4 +22,5 @@ Mesmo metodo, agora utilizando o comando `java -jar dist/Compiler.jar -target pa
 
 ## Fase análise semântica
 java -jar dist/Compiler.jar -target parser -debug ../semantics/legal-01.dcf
+
 java -jar dist/Compiler.jar -target inter -debug ../semantics/legal-01.dcf
