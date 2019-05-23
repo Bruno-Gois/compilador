@@ -20,3 +20,7 @@ e executar os comandos ` ant ` e `java -jar dist/Compiler.jar -target scan ../sc
 ### Fase análise sintática:
 Mesmo metodo, agora utilizando o comando `java -jar dist/Compiler.jar -target parse -debug ../parser/` + nome do arquivo (ex: legal-01)
 
+## Fase análise semântica
+java -jar dist/Compiler.jar -target parser -debug ../semantics/legal-01.dcf
+
+java -jar dist/Compiler.jar -target inter -debug ../semantics/legal-01.dcf
