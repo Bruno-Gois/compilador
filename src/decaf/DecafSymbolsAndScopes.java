@@ -61,6 +61,20 @@ public class DecafSymbolsAndScopes extends DecafParserBaseListener {
     public void exitBlock(DecafParser.BlockContext ctx) {
         popScope();
     }
+	
+	@Override public void enterTypeId(DecafParser.TypeIdContext ctx) {
+		defineVar(ctx.ID().getSymbol());	
+	}
+	@Override public void exitTypeId(DecafParser.TypeIdContext ctx) {
+		String name = ctx.ID().getSymbol().getText();
+        Symbol var = currentScope.resolve(name);
+        if ( var==null ) {
+            this.error(ctx.ID().getSymbol(), "no such variable: "+name);
+        }
+        if ( var instanceof FunctionSymbol ) {
+            this.error(ctx.ID().getSymbol(), name+" is not a variable");
+        }	
+	}
 
     @Override
     public void enterCommaId(DecafParser.CommaIdContext ctx) {

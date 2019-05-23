@@ -24,9 +24,9 @@ parameters: (type ID (COMMA type ID)*)*;
 
 block: LCURLY var_decl* statement* RCURLY;
 
-var_decl: teste (commaId)* SEMICOLON;
+var_decl: typeId (commaId)* SEMICOLON;
 
-teste: type ID;
+typeId: type ID;
 
 commaId: COMMA ID;
 
